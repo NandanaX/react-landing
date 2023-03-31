@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Cards from "../components/Card";
 import {
 	Layout,
 	Typography,
@@ -35,12 +36,7 @@ const FilterSection = () => {
 		console.log(`checked = ${e.target.checked}`);
 	};
 	const onSearch = (value) => console.log(value);
-	const { Meta } = Card;
-	const [showCalendar, setShowCalendar] = useState(false);
 
-	const handleIconClick = () => {
-		setShowCalendar(!showCalendar);
-	};
 	return (
 		<div className="fliter-section">
 			<Row>
@@ -92,97 +88,8 @@ const FilterSection = () => {
 						</Form.Item>
 					</Col>
 				</Form>
-				<Col
-					span={15}
-					className="card-section d-flex justify-content-space-between"
-				>
-					<Card
-						cover={
-							<img
-								alt="example"
-								src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-							/>
-						}
-						
-						actions={[
-							<CalendarOutlined onClick={handleIconClick} key="setting" />,
-							<EditOutlined key="edit" />,
-							<EllipsisOutlined key="ellipsis" />,
-						]}
-						
-					>
-						{showCalendar && (
-						<DatePicker
-						  showToday={false}
-						  onChange={() => {
-							// handle calendar date selection
-						  }}
-						/>
-					  )}
-						<Meta
-							avatar={<Avatar src="https://joesch.moe/api/v1/random" />}
-							title="Card title"
-							description="This is the description"
-						/>
-					</Card>
-					<Card
-						cover={
-							<img
-								alt="example"
-								src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-							/>
-						}
-						
-						actions={[
-							<CalendarOutlined onClick={handleIconClick} key="setting" />,
-							<EditOutlined key="edit" />,
-							<EllipsisOutlined key="ellipsis" />,
-						]}
-						
-					>
-						{showCalendar && (
-						<DatePicker
-						  showToday={false}
-						  onChange={() => {
-							// handle calendar date selection
-						  }}
-						/>
-					  )}
-						<Meta
-							avatar={<Avatar src="https://joesch.moe/api/v1/random" />}
-							title="Card title"
-							description="This is the description"
-						/>
-					</Card>
-					<Card
-						cover={
-							<img
-								alt="example"
-								src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-							/>
-						}
-						
-						actions={[
-							<CalendarOutlined onClick={handleIconClick} key="setting" />,
-							<EditOutlined key="edit" />,
-							<EllipsisOutlined key="ellipsis" />,
-						]}
-						
-					>
-						{showCalendar && (
-						<DatePicker
-						  showToday={false}
-						  onChange={() => {
-							// handle calendar date selection
-						  }}
-						/>
-					  )}
-						<Meta
-							avatar={<Avatar src="https://joesch.moe/api/v1/random" />}
-							title="Card title"
-							description="This is the description"
-						/>
-					</Card>
+				<Col span={15}>
+					<Cards></Cards>
 				</Col>
 			</Row>
 		</div>
